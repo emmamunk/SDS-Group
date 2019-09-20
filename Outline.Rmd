@@ -7,18 +7,18 @@ output: pdf_document
 
 Outline of project:
 
-Problem statement
+Problem statement (Signe)
 
-Short outline of implementation
+Short outline of implementation (wait)
 
-Description of data, collection of data
+Description of data, collection of data (Signe)
 
-Data preparation
+Data preparation (1)
 -Cleaning
 -Recoding
 -Wrangling
 
-Exploratory data analysis
+Exploratory data analysis (2)
 
 
 
