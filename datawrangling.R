@@ -8,8 +8,14 @@ library(readr)
 data <- read_csv("C:/Users/Emma/OneDrive/Universitetet/9. semester/SDS/M1/loan.csv")
 # Variables to select
 vars <- c("purpose", "term", "issue_d",  "loan_status",
-          "loan_amnt", "funded_amnt", "funded_amnt_inv", 
-          "int_rate", "annual_inc", "emp_length", "home_ownership")
+          "loan_amnt", "int_rate", "annual_inc", "emp_length", "home_ownership", "total_bc_limit")
+
+view(data)
+##
+vars_num = c("loan_amnt","funded_amnt","funded_amnt_inv","int_rate","annual_inc")
+
+glimpse(data[,vars])
+
 
 # Missing variable???
 extr_vars <- c("acceptD")
@@ -65,7 +71,7 @@ library(reshape2)
 
 #Summarizing data
 #After datawrangling, we have to summarize the data. 
-head(data[,vars])
+head(data[,var_num])
 
 #And the variables
 glimpse(data[,vars])
@@ -73,15 +79,27 @@ glimpse(data[,vars])
 ggcorr(data[,vars], label = TRUE, label_size = 3, label_round = 2, label_alpha = TRUE)
 #There is only five numeric variables, therefor only five variables. 
 
+library(plyr)
+
+#xxxxx
+count(data$loan_status)
 ggplot(data, aes(loan_status, ..count..)) + geom_bar()
+ggplot(data, aes(loan_status, ..count..)) + geom_histogram()
+
+#ggpairs(data[,vars_num], aes(alpha = 0.3))  
+##
+
 
 #Binary variable
 library(dummies)
 
 dummy = NULL
-data$dummy = dummy[data$loan_status == "Charged off"] = "Yes"
+data$dummy = dummy[data$loan_status == "Charged off"] = "No"
 data$dummy = dummy[data$loan_status == "Fully paid"] = "Yes"
 data$dummy = dummy[data$loan_status == "Default"] = "No"
 data$dummy = na.omit(data, cols="dummy")
-data$dummy = as.factor(data$dummy)
+#data$dummy = as.factor(data$dummy)
 data$dummy
+
+
+
