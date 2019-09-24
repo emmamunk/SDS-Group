@@ -11,7 +11,7 @@ vars <- c("purpose", "term", "issue_d",  "loan_status",
           "loan_amnt", "int_rate", "annual_inc", "emp_length", "home_ownership", "total_bc_limit")
 
 view(data)
-
+##
 vars_num = c("loan_amnt","funded_amnt","funded_amnt_inv","int_rate","annual_inc")
 
 glimpse(data[,vars])
