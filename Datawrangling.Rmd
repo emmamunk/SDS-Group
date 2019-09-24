@@ -1,0 +1,9 @@
+---
+title: "Datawrangling"
+author: "Mathias Flinta"
+date: "9/24/2019"
+output: pdf_document
+---
+
+# Data wrangling
+
