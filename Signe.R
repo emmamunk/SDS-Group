@@ -1,12 +1,19 @@
-#Michael se
-
-setwd("~/Desktop/R studio")
-install.packages("tidyverse")
-install.packages("dplyr")
-library(tidyverse)
-library(dplyr)
-
+rm(list=ls())
 library(readr)
-data <- read_delim("~/Documents/5. semester/Makroøkonomi 3/data.txt", 
-                   "\t", escape_double = FALSE, trim_ws = TRUE)
-View(data)
+library(tidyverse)
+
+data <- read_csv("~/Documents/Kandidat/9. semester/SDS/Gruppeopgave/lending-club-loan-data/loan.csv")
+
+vars <- c("purpose", "term", "issue_d",  "loan_status",
+          "loan_amnt", "int_rate", "annual_inc", 
+          "total_bc_limit", "emp_length", "home_ownership")
+
+
+#Variabelbeskrivelse: 
+
+
+extr_vars <- c("acceptD")
+
+na_vars <- c("id", "member_id")
+
+distinct(tibble(data$loan_status))
